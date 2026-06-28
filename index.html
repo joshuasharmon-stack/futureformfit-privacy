@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Future FormFit</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0f12;
+      --surface: #14171c;
+      --surface-2: #1c2028;
+      --border: rgba(255,255,255,0.08);
+      --text-primary: #f0f2f5;
+      --text-secondary: #8b929e;
+      --text-muted: #555c68;
+      --accent: #4f8ef7;
+      --accent-dim: rgba(79,142,247,0.12);
+      --radius: 12px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f5f6f8;
+        --surface: #ffffff;
+        --surface-2: #f0f2f5;
+        --border: rgba(0,0,0,0.08);
+        --text-primary: #0d0f12;
+        --text-secondary: #4a5260;
+        --text-muted: #8b929e;
+        --accent: #2563eb;
+        --accent-dim: rgba(37,99,235,0.08);
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 10;
+    }
+    .header-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      height: 60px;
+    }
+    .logo-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-mark svg { display: block; }
+    .logo-name {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+    }
+    .logo-name span { color: var(--accent); }
+
+    /* ── Main layout ── */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(28px, 5vw, 38px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    .hero-meta {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .hero-meta strong { color: var(--text-secondary); font-weight: 500; }
+
+    /* ── Sections ── */
+    .section {
+      margin-bottom: 48px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 650;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: var(--accent-dim);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 12px 0 20px;
+    }
+    p { color: var(--text-secondary); margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Data table card ── */
+    .data-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .data-card-header {
+      padding: 12px 16px;
+      background: var(--surface-2);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .data-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .data-row:last-child { border-bottom: none; }
+    .data-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 5px;
+      background: var(--accent-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .data-icon svg { display: block; }
+    .data-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    .data-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+
+    /* ── Callout ── */
+    .callout {
+      display: flex;
+      gap: 14px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(79,142,247,0.2);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-top: 20px;
+    }
+    .callout-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: var(--accent);
+    }
+    .callout p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+    .callout p strong { color: var(--text-primary); font-weight: 600; }
+
+    /* ── Contact card ── */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .contact-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 22px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(79,142,247,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .contact-info { flex: 1; }
+    .contact-name { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+    .contact-role { font-size: 13px; color: var(--text-muted); margin-top: 1px; }
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid rgba(79,142,247,0.25);
+      border-radius: 6px;
+      padding: 4px 10px;
+    }
+    .contact-email:hover { background: var(--accent-dim); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+    }
+    .footer-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer-inner a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-mark">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 2L10.5 6.5H5.5L8 2Z" fill="white" opacity="0.9"/>
+        <path d="M3 9.5C3 7.5 4.5 6.5 5.5 6.5H10.5C11.5 6.5 13 7.5 13 9.5C13 11.5 11 13 8 14C5 13 3 11.5 3 9.5Z" fill="white"/>
+      </svg>
+    </div>
+    <span class="logo-name">Future <span>FormFit</span></span>
+  </div>
+</header>
+
+<main>
+
+  <div class="hero">
+    <p class="hero-eyebrow">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="hero-meta">
+      <strong>Effective date:</strong> June 28, 2026 &nbsp;·&nbsp;
+      <strong>Last updated:</strong> June 28, 2026
+    </p>
+  </div>
+
+  <!-- 1. Overview -->
+  <div class="section">
+    <h2><span class="section-num">1</span> Overview</h2>
+    <div class="divider"></div>
+    <p>Future FormFit ("the app", "we", "us") is an AI-powered fitness coaching app for iOS built and operated by PapaSpuds LLC. This Privacy Policy explains what personal information the app collects, how it is used, and the choices you have regarding your data.</p>
+    <p>By using Future FormFit, you agree to the practices described in this policy.</p>
+  </div>
+
+  <!-- 2. Information We Collect -->
+  <div class="section">
+    <h2><span class="section-num">2</span> Information we collect</h2>
+    <div class="divider"></div>
+    <p>You provide the following information directly when setting up your profile or logging activity in the app. This data is stored locally on your device using Apple's SwiftData framework.</p>
+
+    <div class="data-card">
+      <div class="data-card-header">Data collected</div>
+
+      <div class="data-row">
+        <div class="data-icon">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="4" r="2.5" stroke="#4f8ef7" stroke-width="1.2"/>
+            <path d="M2 10.5C2 8.5 3.8 7 6 7C8.2 7 10 8.5 10 10.5" stroke="#4f8ef7" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="data-label">Profile information</div>
+          <div class="data-desc">Name, age, biological sex, height, weight, and fitness goals</div>
+        </div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-icon">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 6C2 3.8 3.8 2 6 2C8.2 2 10 3.8 10 6C10 8.2 8.2 10 6 10" stroke="#4f8ef7" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M4 6L5.5 7.5L8 4.5" stroke="#4f8ef7" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="data-label">Health and fitness metrics</div>
+          <div class="data-desc">Body weight logs, daily calorie and hydration targets, macro goals, and any noted health limitations or injuries</div>
+        </div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-icon">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="1.5" width="8" height="9" rx="1.5" stroke="#4f8ef7" stroke-width="1.2"/>
+            <path d="M4 4.5H8M4 6.5H8M4 8.5H6" stroke="#4f8ef7" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="data-label">Meal logs</div>
+          <div class="data-desc">Foods and meals you log, including portions and nutritional data</div>
+        </div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-icon">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 9.5V5M6 9.5V3M8 9.5V6.5" stroke="#4f8ef7" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="data-label">Workout logs</div>
+          <div class="data-desc">Exercise names, sets, reps, weights, and session history</div>
+        </div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-icon">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.5 6C1.5 4 3 2 6 2C9 2 10.5 4 10.5 6" stroke="#4f8ef7" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M1.5 6C1.5 8 3 10 6 10C9 10 10.5 8 10.5 6" stroke="#4f8ef7" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+            <circle cx="6" cy="6" r="1.5" fill="#4f8ef7"/>
+          </svg>
+        </div>
+        <div>
+          <div class="data-label">AI coaching interactions</div>
+          <div class="data-desc">Fitness profile context and exercise data sent to the AI assistant to generate personalized coaching responses</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3. How We Use Your Information -->
+  <div class="section">
+    <h2><span class="section-num">3</span> How we use your information</h2>
+    <div class="divider"></div>
+    <p>Your data is used solely to operate the app's features:</p>
+    <p>Profile and health metrics are used to display your dashboard, calculate nutrition targets, and personalize your experience within the app. Workout and meal logs are stored locally on your device and used to show your history and progress. To generate AI-powered coaching responses (meal plans, workout plans, and fitness advice), a summary of your fitness profile and relevant workout context is sent to our AI proxy service. This data is used only to generate your response and is not retained after the request completes.</p>
+    <p>We do not use your data for advertising, analytics profiling, or any purpose beyond operating the features described above.</p>
+  </div>
+
+  <!-- 4. Data Storage and Third Parties -->
+  <div class="section">
+    <h2><span class="section-num">4</span> Data storage and third parties</h2>
+    <div class="divider"></div>
+    <p><strong>Local storage:</strong> All personal data — your profile, workout logs, meal logs, and health metrics — is stored locally on your iPhone using Apple's SwiftData framework. This data does not leave your device except as described below.</p>
+    <p><strong>AI coaching proxy:</strong> When you request AI-generated coaching (such as a meal plan or workout recommendation), a subset of your fitness profile (such as your goals, relevant exercise history, and any noted health limitations) is transmitted to a Cloudflare-hosted proxy server operated by PapaSpuds LLC, which forwards the request to Anthropic's Claude AI API. This data is used only to fulfill your request in real time. It is not logged, stored, sold, or shared with any third party beyond what is required to complete the API call.</p>
+    <p><strong>No third-party analytics or advertising SDKs</strong> are included in this app. We do not share your data with data brokers, advertisers, or any other parties.</p>
+
+    <div class="callout">
+      <svg class="callout-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M10 9V14M10 7V6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <p><strong>Your health data is never sold.</strong> Future FormFit does not sell, rent, or trade your personal or health information to any third party, under any circumstances.</p>
+    </div>
+  </div>
+
+  <!-- 5. Data Retention and Deletion -->
+  <div class="section">
+    <h2><span class="section-num">5</span> Data retention and deletion</h2>
+    <div class="divider"></div>
+    <p>Your data is retained on your device for as long as the app is installed. Because all data is stored locally, <strong>deleting the app from your iPhone permanently deletes all data associated with Future FormFit.</strong> There is no account or cloud backup to recover from after deletion.</p>
+    <p>No data is retained by our servers beyond the duration of an individual AI coaching request.</p>
+  </div>
+
+  <!-- 6. Children's Privacy -->
+  <div class="section">
+    <h2><span class="section-num">6</span> Children's privacy</h2>
+    <div class="divider"></div>
+    <p>Future FormFit is not directed at children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided personal information through the app, please contact us at the email below and we will promptly delete it.</p>
+  </div>
+
+  <!-- 7. Changes to This Policy -->
+  <div class="section">
+    <h2><span class="section-num">7</span> Changes to this policy</h2>
+    <div class="divider"></div>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. For material changes, we will provide notice within the app. Your continued use of Future FormFit after changes are posted constitutes acceptance of the updated policy.</p>
+  </div>
+
+  <!-- 8. Contact -->
+  <div class="section">
+    <h2><span class="section-num">8</span> Contact us</h2>
+    <div class="divider"></div>
+    <p>If you have questions or concerns about this Privacy Policy or your data, you can reach us at:</p>
+
+    <div class="contact-card">
+      <div class="contact-avatar">JH</div>
+      <div class="contact-info">
+        <div class="contact-name">Josh Harmon</div>
+        <div class="contact-role">PapaSpuds LLC — Future FormFit</div>
+        <a href="mailto:papaspudsllc@gmail.com" class="contact-email">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1.5" y="3" width="11" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M1.5 4.5L7 8L12.5 4.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+          papaspudsllc@gmail.com
+        </a>
+      </div>
+    </div>
+    <p style="margin-top: 16px; font-size: 14px; color: var(--text-muted);">We aim to respond to all privacy-related inquiries within 5 business days.</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    &copy; 2026 PapaSpuds LLC. All rights reserved. &nbsp;·&nbsp; Future FormFit
+  </div>
+</footer>
+
+</body>
+</html>
